@@ -14,5 +14,12 @@ publicRoute.get("/sign-in", (req, res) => {
   res.sendFile(
     path.join(__dirname, "..", "..", "public", "html", "signin.html")
   );
+
+});
+publicRoute.get("/profile", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "..", "..", "public", "html", "profile.html")
+  );
+
 });
 module.exports = publicRoute;
