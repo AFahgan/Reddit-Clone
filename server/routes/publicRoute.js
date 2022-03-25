@@ -5,14 +5,14 @@ publicRoute.get("/home", (req, res) => {
   res.sendFile(
     path.join(__dirname, "..", "..", "public",  "index.html")
   );});
-publicRoute.get("/sign-up", (req, res) => {
+publicRoute.get("/register", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "..", "..", "public", "html", "signup.html")
+    path.join(__dirname, "..", "..", "public", "html", "register.html")
   );
 });
-publicRoute.get("/sign-in", (req, res) => {
+publicRoute.get("/login", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "..", "..", "public", "html", "signin.html")
+    path.join(__dirname, "..", "..", "public", "html", "login.html")
   );
 
 });
