@@ -8,6 +8,7 @@ CREATE TABLE users (
 );
 
 
+INSERT INTO users (userName,email,password) VALUES ('ayman','ayman@hotmail.com','a123456');
 
 
 COMMIT;
