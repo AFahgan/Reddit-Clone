@@ -21,8 +21,10 @@ body {
   margin: 60px 0 0 30px;
 }
 .form-body h4 {
-  font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+  font-size: 18px;
+font-weight: 500;
+line-height: 22px;
 }
 .form-body .text {
   font-size: 14px;
@@ -33,6 +35,13 @@ body {
   line-height: 18px;
   margin-top: 8px;
 }
+.form-body .text2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-top: 8px;
+  }
 a {
   text-decoration: none;
 }
@@ -68,9 +77,11 @@ a {
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
+  color: #878a8c;
 }
 hr {
   width: 120px;
+  
 }
 .form-body img {
   width: 20px;
@@ -144,3 +155,9 @@ hr {
     text-decoration: none;
     color: #3394dc;
 }
+.error {
+    font-size: 10px;
+    color: #ff4500;
+    text-transform: uppercase;
+  }
+  

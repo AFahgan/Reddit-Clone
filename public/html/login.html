@@ -15,8 +15,8 @@
         <img class="background" src="../assets/background.png" alt="background">
 
         <div class="form-body">
-            <h4>Sign Up</h4>
-            <p class="text">By continuing, you are setting up a Reddit account and agree to our <a
+            <h4>Login</h4>
+            <p class="text2">By continuing, you agree to our <a
                     href="#User-Agreement">User Agreement</a> and <a href="#Privacy-Policy">Privacy Policy</a>.</p>
           <div class="btnhover">
             <div class="gmail">
@@ -30,20 +30,24 @@
                 <img src="https://www.redditstatic.com/accountmanager/56133cfff407f8c1fb8694b4ef00975c.svg" alt="apple">
                 <p>Continue With Apple</p>
             </div>
-            </div>
+            </div> 
             <div class="or">
                 <hr/> OR <hr/>
             </div>
             <form method="post" class="form">
                 <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+                <p id="emailErr" class="error"></p>
                 <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
-                <button class="btn" type="submit">Login</button>
+                <p id="passwordErr" class="error"></p>
+                <button class="btn" type="submit">Log in</button>
             </form>
             <span class="forget">Forgot your <a class="send" href="#username">username</a> or <a class="send" href="#password">password</a>?</span>
             
             <h5>New to Reddit? <a class="send" href="/register">SIGN UP</a></h5>
         </div>
     </div>
+    <script src="../js/login.js"></script>
+
 </body>
 
 </html>
