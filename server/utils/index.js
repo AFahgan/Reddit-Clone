@@ -1,13 +1,16 @@
 const CustomError = require('./CustomError');
+const { asyncValidation, verifyToken } = require('./verifyJWT');
 const comaprePassword = require('./password/comparepassword');
 const hashPassword = require('./password/hashpassword');
-const signupvalidation = require('./validation/signup-validation');
-const signinValiadtion = require('./validation/signinValiadtion');
+const signupSchema = require('./validation/signupSchema');
+const signinSchema = require('./validation/signinSchema');
 
 module.exports = {
-  signinValiadtion,
-  signupvalidation,
+  signupSchema,
+  signinSchema,
   hashPassword,
   comaprePassword,
   CustomError,
+  asyncValidation,
+  verifyToken,
 };
