@@ -1,16 +1,10 @@
 const apiRoute = require("express").Router();
-const { postSignUp, signin } = require("../controllers");
-const { isAuthProtected, isUserLogined } = require("../controllers/middleware");
+const { postSignUp, signin, logout } = require("../controllers");
 
-apiRoute.get("/home", isAuthProtected, (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "..", "public"));
-});
-apiRoute.get("/login", isUserLogined, (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "..", "..", "public", "html", "login.html")
-  );
-});
+
+
 apiRoute.post("/register", postSignUp);
 apiRoute.post("/login", signin);
+apiRoute.get("/api/v1/logout", logout);
 
 module.exports = apiRoute;

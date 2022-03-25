@@ -2,9 +2,10 @@
 const jwt = require("jsonwebtoken");
 
 const isAuthProtected = (req, res, next) => {
+  // console.log(req.cookie)
     const { id } = req.cookies;
     if (id) {
-      jwt.verify(id, process.env.privateKey, (err, id) => {
+      jwt.verify(id, process.env.PRIVATE_KEY, (err, id) => {
         if (err) {
           res.clearCookie('id');
           res.redirect('/');
@@ -22,11 +23,11 @@ const isAuthProtected = (req, res, next) => {
   const isUserLogined = (req, res, next) => {
     const { id } = req.cookies;
     if (id) {
-      jwt.verify(id, process.env.privateKey, (err, id) => {
+      jwt.verify(id, process.env.PRIVATE_KEY, (err, id) => {
         if (err) {
           next()
         }else{
-          res.redirect('/home');
+          res.redirect('/');
         }
       });
     }else{

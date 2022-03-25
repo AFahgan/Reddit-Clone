@@ -24,7 +24,7 @@ const signin = (req, res) => {
                 if (err) {
                   console.log(err);
                 } else {
-                  res.cookie("id", token).redirect("/home");
+                  res.cookie("id", token).redirect("/reddit");
                 }
               }
             );
