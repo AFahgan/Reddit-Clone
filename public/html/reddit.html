@@ -7,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  
     <link rel="stylesheet" href="./css/style.css" />
     <title>Reddit | Home</title>
 </head>
 </head>
 
 <body>
-
+    <!-- Header -->
     <nav>
         <img class="logo" src="./assets/Reddit-Logo.svg" />
         <div>
@@ -25,27 +28,24 @@
         </div>
     </nav>
 
-
-    <div class="trending">
-        <h4 class="Trending-now">Trending Today</h4>
-        <div class="trending-imgs">
-            <div class="trend">
-                <img src="./assets/gazaskygeeks.png" alt="Trend" />
-            </div>
-            <div class="trend">
-                <img src="./assets/gazaskygeeks.png" alt="Trend" />
-                
-            </div>   <div class="trend">
-                <img src="./assets/gazaskygeeks.png" alt="Trend" />
-                
-            </div>   <div class="trend">
-                <img src="./assets/gazaskygeeks.png" alt="Trend" />
-                
-            </div>
-        </div>
+        <!-- Create Post -->
+        <!-- ========================== body ================================== -->
+        <main class="main-reddit">
+            <div class="container">
+            <div class="reddit-Post">
+                <div class="reddit-Post-form">
+                    <div>
+                       <img src="https://styles.redditmedia.com/t5_28hlj0/styles/profileIcon_snoodf861252-2d6e-40ac-8bb4-192a77c9a2db-headshot.png" id="profile-image">
+                    </div>
+                        <input type="text" placeholder="Create Post" id="post" />
+                        <a href="/addpost">   <button type="submit" class="addpost">Add Post</button></a>
+    
+                        <button><i class="fas fa-link"></i></button>
+                        <button><i class="fas fa-image"></i></button>
+                    </div>
+             </div></div></main>
+        
         <script src="../js/index.js"></script>
-
 </body>
 
 </html>
-  
