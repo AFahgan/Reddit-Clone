@@ -1,0 +1,203 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  
+  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+}
+.form-body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 60px 0 0 30px;
+}
+.form-body h4 {
+  margin-bottom: 5px;
+  font-size: 18px;
+font-weight: 500;
+line-height: 22px;
+}
+.form-body .text {
+  font-size: 14px;
+  margin-bottom: 20px;
+  width: 250px;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 18px;
+  margin-top: 8px;
+}
+.form-body .text2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-top: 8px;
+  }
+a {
+  text-decoration: none;
+}
+.gmail {
+  width: 270px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #0079d3;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #fff;
+  color: #0079d3;
+}
+.btnhover :hover {
+  background-color: #0079d3;
+  color: #fff;
+}
+.gmail p {
+  margin-left: 28px;
+  text-align: center;
+}
+.or {
+  width: 270px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  color: #878a8c;
+}
+hr {
+  width: 120px;
+  
+}
+.form-body img {
+  width: 20px;
+  margin: 0 10px;
+}
+.background {
+  height: 100vh;
+  min-height: 430px;
+  width: 156px;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form input {
+  width: 270px;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fcfcfb;
+  padding: 0 5px;
+
+  font-size: 14px;
+}
+
+::placeholder {
+  font-weight: 200;
+  color: gray;
+}
+.btn {
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 32px;
+  color: #fff;
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  background: #0079d3;
+  text-transform: uppercase;
+  cursor: pointer;
+  line-height: unset;
+  min-height: 35px;
+  max-width: 392px;
+  width: 100%;
+  min-width: 155px;
+  padding: 5px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.btn:hover {
+  background: #3394dc;
+}
+
+.forget {
+  font-size: 14px;
+  margin: 20px 0;
+  font-weight: 400;
+  text-transform: none;
+}
+.already {
+  margin-top: 20px;
+}
+.send{
+    text-decoration: none;
+    color: #3394dc;
+}
+.error {
+    font-size: 10px;
+    color: #ff4500;
+    text-transform: uppercase;
+  }
+  
+
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+
+}
+#login, #logout{
+    background:white;
+    color: #1a7cd8;
+    text-decoration: none;
+    padding:5px 40px;
+    border-radius:15px;
+    border: 1px solid;
+    border-color:#1a7cd8 ;
+ }
+#signup{
+    background: #0184ff;
+    color: white;
+    text-decoration: none;
+    padding:5px 40px;
+    border-radius:15px;
+ }
+ #signup:hover {
+     cursor: pointer;
+     background: #0063c0;
+
+ }
+ #login:hover, #logout:hover{
+    cursor: pointer;
+    color: white;
+
+    background: #0184ff;
+
+
+}
