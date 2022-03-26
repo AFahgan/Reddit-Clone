@@ -3,10 +3,13 @@ const path = require("path");
 const { isAuthProtected, isUserLogined } = require("../controllers/middleware");
 const { logout } = require("../controllers");
 
-publicRoute.get("/home", (req, res) => {
+publicRoute.get("/home", isAuthProtected, (req, res) => {
   res.sendFile(
-    path.join(__dirname, "..", "..", "public",  "index.html")
-  );});
+    path.join(__dirname, "..", "..", "public", "html", "reddit.html")
+  );
+
+});
+
 publicRoute.get("/register", isUserLogined,(req, res) => {
   res.sendFile(
     path.join(__dirname, "..", "..", "public", "html", "register.html")
@@ -21,6 +24,7 @@ publicRoute.get("/login", isUserLogined, (req, res) => {
   );
 
 });
+
 publicRoute.get("/profile",isAuthProtected, (req, res) => {
   res.sendFile(
     path.join(__dirname, "..", "..", "public", "html", "profile.html")
