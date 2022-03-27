@@ -1,16 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Reddit | Home</title></head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Reddit | Home</title>
 </head>
+</head>
+
 <body>
-    <header>
-        <a href='/login' id='login'>Log in</a>
-        <a href='/register' id='signup'>Sign up</a>
-    </header>
+    <!-- Header -->
+    <nav>
+        <img class="logo" src="./assets/Reddit-Logo.svg" />
+        <div>
+            <input class="search" type="text" placeholder="Search Reddit" />
+        </div>
+        <div class="reges">
+            <a href="/login"><button class="login">Log In</button></a>
+            <a href="/register"><button class="signup">Sign Up</button></a>
+        </div>
+    </nav>
+    <div class="container">
+
+        <!-- Trending -->
+        <div class="trending">
+            <h4 class="Trending-now">Trending Today</h4>
+            <div class="trending-imgs">
+                <div class="trend">
+                    <img src="./assets/gazaskygeeks.png" alt="Trend" />
+                </div>
+                <div class="trend">
+                    <img src="./assets/gazaskygeeks.png" alt="Trend" />
+                </div>
+                <div class="trend">
+                    <img src="./assets/gazaskygeeks.png" alt="Trend" />
+                </div>
+                <div class="trend">
+                    <img src="./assets/gazaskygeeks.png" alt="Trend" />
+                </div>
+            </div>
+        </div>
+        <!-- Create Post -->
+        <!-- ========================== body ================================== -->
+ 
+
+        <div class="posts">
+
+            <div class="posts-header">
+                <button class="hot">
+                    <img src="./assets/logo.png" alt="fire">Hot
+                </button>
+                <select class="hot">
+                    <option>Every Where</option>
+                    <option>Palestine</option>
+                </select>
+                <button><img src="./assets/logo.png" alt="fire">New</button>
+                <button><img src="./assets/logo.png" alt="top">Top</button>
+                <button class="dots">
+                    <img src="./assets/logo.png" alt="dotes">
+                </button>
+            </div>
+            <div class="container2">
+                <section class="news">
+
+                    <article class="news-section" id="latest">
+                    </article>
+
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Posts -->
+
+    <script src="./js/dom.js"></script>
 </body>
+
+
 </html>
