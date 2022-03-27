@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  
-    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Reddit | Home</title>
 </head>
 </head>
@@ -23,29 +23,61 @@
             <input class="search" type="text" placeholder="Search Reddit" />
         </div>
         <div class="reges">
-            <p>Welcome Ayman</p>
+            <div class="btnlk">
+                <p class="username">Welcome </p>
+            </div>
             <a href="/logout"><button id="logout" class="login">Logout</button></a>
         </div>
     </nav>
 
-        <!-- Create Post -->
-        <!-- ========================== body ================================== -->
-        <main class="main-reddit">
-            <div class="container">
-            <div class="reddit-Post">
-                <div class="reddit-Post-form">
-                    <div>
-                       <img src="https://styles.redditmedia.com/t5_28hlj0/styles/profileIcon_snoodf861252-2d6e-40ac-8bb4-192a77c9a2db-headshot.png" id="profile-image">
-                    </div>
-                        <input type="text" placeholder="Create Post" id="post" />
-                        <a href="/addpost">   <button type="submit" class="addpost">Add Post</button></a>
-    
-                        <button><i class="fas fa-link"></i></button>
-                        <button><i class="fas fa-image"></i></button>
-                    </div>
-             </div></div></main>
-        
-        <script src="../js/index.js"></script>
+    <!-- Create Post -->
+    <!-- ========================== body ================================== -->
+    <div class="reddit-Post">
+        <div class="reddit-Post-form">
+            <div>
+                <img src="https://styles.redditmedia.com/t5_28hlj0/styles/profileIcon_snoodf861252-2d6e-40ac-8bb4-192a77c9a2db-headshot.png"
+                    id="profile-image">
+            </div>
+            <form action="/addPost" class="wrap"  id="post" method="post">
+                <input type="text" class="addpost" name="title" placeholder="Add Title"
+                    required />
+                <input type="submit" class="addpost" id="searchBtn" value="addfg" />
+            </form>
+            <button><i class="fas fa-link" id=" btn"></i></button>
+            <button><i class="fas fa-image" id="btn"></i></button>
+        </div>
+    </div>
+
+    <div class="posts">
+
+        <div class="posts-header">
+            <button class="hot">
+                <img src="./assets/logo.png" alt="fire">Hot
+            </button>
+            <select class="hot">
+                <option>Every Where</option>
+                <option>Palestine</option>
+            </select>
+            <button><img src="./assets/logo.png" alt="fire">New</button>
+            <button><img src="./assets/logo.png" alt="top">Top</button>
+            <button class="dots">
+                <img src="./assets/logo.png" alt="dotes">
+            </button>
+        </div>
+        <div class="container2">
+            <section class="news">
+
+                <article class="news-section" id="latest">
+                </article>
+
+            </section>
+        </div>
+    </div>
+</div>
+ 
+    <script src="../js/index.js"></script>
+    <script src="./js/dom.js"></script>
+
 </body>
 
 </html>

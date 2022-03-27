@@ -7,7 +7,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-family: "Source Sans Pro", sans-serif;
   background-color: #dae0e6;
-  
 }
 
 nav {
@@ -85,6 +84,11 @@ nav {
 
   background: #f1f1f156;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .trending {
   display: flex;
@@ -125,42 +129,40 @@ nav {
   border-radius: 5px;
 }
 /* ====================  main ========================== */
-.main-reddit {
-  display: flex;
-  justify-content: center;
-  padding-top: 5rem;
-}
-
 
 #profile-image {
   width: 70px;
-  height:70px;
-  margin-right:   15px;
+  height: 70px;
+  margin-right: 15px;
 }
-
-.main-reddit .container {
-  display: flex;
-  width: 80%;
-}
-
-
 
 /** ==================== left main ========================== */
-.reddit-Post{
-      width: 67%;
+.reddit-Post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 190px;
+  margin-top: 20px;
 }
 .reddit-Post-form {
- display: flex;
+  display: flex;
   align-items: center;
   background: #fff;
   height: 8vh;
-  border: 2px solid #CCCCCC;
+  border: 2px solid #cccccc;
   border-radius: 4px;
-  padding: .5rem;
+  padding: 0.5rem;
   margin-bottom: 16px;
   padding: 8px;
 }
-.reddit-Post-form input{
+.posts-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.reddit-Post-form input {
   background-color: #dae0e647;
   border-radius: 4px;
   border: 1px solid #dae0e6;
@@ -175,45 +177,37 @@ nav {
   outline: none;
   padding: 0 16px;
 }
-.reddit-Post-form input:hover{
-background-color: #fff;
-border-color: #b0b6de;
+.reddit-Post-form input:hover {
+  background-color: #fff;
+  border-color: #b0b6de;
 }
 
-
-.reddit-Post-form button{
+.reddit-Post-form button {
   background: none;
   border: none;
   color: #797e82;
   font-size: 1.2rem;
-  margin-left:10px;
+  margin-left: 10px;
 }
 
-.addpost{
+.addpost {
   cursor: pointer;
-
 }
-.reddit-Post-form button :hover{
+.reddit-Post-form button :hover {
   cursor: pointer;
-  color: #0164c0
-
+  color: #0164c0;
 }
-.posts-container{
-  width: 80%;
+
+.posts {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
-}
-.posts{
-  margin-left: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 67%;
+  padding: 0 190px;
+  margin-top: 20px;
 }
 
-.posts-header{
+.posts-header {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -225,7 +219,7 @@ border-color: #b0b6de;
   border: solid 0.5px #d2d3d3;
   border-radius: 5px;
 }
-.posts-header button{
+.posts-header button {
   background-color: #f7f7f7;
   border: none;
   border-radius: 20px;
@@ -241,19 +235,19 @@ border-color: #b0b6de;
   font-size: 14px;
   font-weight: bold;
 }
-.hot{
+.hot {
   color: #0079d2;
 }
-.dots{
+.dots {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.dots img{
+.dots img {
   margin-left: 13px;
 }
-select{
+select {
   background-color: #fff;
   border: none;
   border-radius: 20px;
@@ -261,8 +255,46 @@ select{
   width: 120px;
   padding: 0 10px;
 }
-img{
- width:50px;
+img {
+  width: 50px;
 }
-button img{
-  width: 20px;}
+button img {
+  width: 20px;
+}
+
+.posts2 {
+  height: 100%;
+  border: #000 solid 1px;
+  padding: 20px;
+  margin: 85px;
+  border-radius: 4px;
+  background-color: coral;
+}
+.post {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #1a7cd8;
+  border: #000 solid 1px;
+  display: flex;
+  flex-direction: row;
+}
+.leftpost {
+  padding-right: 10px;
+}
+.rightpost {
+  padding: 10px;
+}
+
+.wrap {
+  display: flex;
+}
+
+.news-section{
+  display: flex;
+}
+
+.news-title{
+margin-right: 10px;
+}

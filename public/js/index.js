@@ -1,3 +1,15 @@
+
+
+fetch("/user").then(response => response.json())
+.then(([user ])=>{ 
+    const btnlk = document.querySelector('.username');
+    const username = document.createElement('span');
+    username.textContent = user[0].username;
+    btnlk.appendChild(username)
+
+   
+})
+//clear cookies and logout
 const logoutBtn = document.getElementById("logout");
 
 logoutBtn.addEventListener('click',(event)=>{
