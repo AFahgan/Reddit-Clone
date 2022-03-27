@@ -39,7 +39,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 20%;
+  width: 28%;
   margin-right: 40px;
 }
 .reges button {
@@ -293,8 +293,43 @@ button img {
 
 .news-section{
   display: flex;
+  margin-top: 50px;
+justify-content: center;
+  margin-top: 50px;
+  color: #0078e9;
+  font-weight: 900;
 }
 
 .news-title{
 margin-right: 10px;
+}
+
+
+.btnlk2{
+  text-align: center;
+  margin-top: 50px;
+  color: #0078e9;
+  font-weight: 900;
+}
+
+.news-details .news-category {
+  color: var(--white);
+  padding: 0.4rem 1.2rem;
+  background-color: var(--main-color);
+  font-size: 0.8rem;
+  align-self: flex-start;
+  border-radius: 2px;
+}
+
+.news-title {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  max-width: 500px;
+  overflow: hidden;
+  text-align: justify;
+  max-height: 70px;
+}
+
+.news-details .news-title:hover {
+  color: var(--main-color);
 }

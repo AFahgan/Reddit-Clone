@@ -4,7 +4,7 @@ const updatePost = (req, res) => {
   const postId = req.params.id;
 
   updatepostDB(postId);
-  res.redirect('/home');
+  res.redirect(req.get('referer'));
 };
 
 module.exports = updatePost;
