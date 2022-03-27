@@ -1,3 +1,5 @@
+const jwt = require("jsonwebtoken");
+
 const isUserLogined = (req, res, next) => {
   const { id } = req.cookies;
   if (id) {
