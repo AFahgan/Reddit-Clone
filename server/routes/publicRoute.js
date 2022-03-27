@@ -1,7 +1,7 @@
 const publicRoute = require("express").Router();
 const path = require("path");
 const { isAuthProtected, isUserLogined } = require("../middleware");
-const { logout, getUserData, addPost, getPosts } = require("../controllers");
+const { logout, getUserData, addPost, getPosts, deletePost, updatePost } = require("../controllers");
 
 publicRoute.get("/home", isAuthProtected, (req, res) => {
   res.sendFile(
@@ -34,5 +34,8 @@ publicRoute.get("/getPosts", getPosts);
 publicRoute.get("/user", isAuthProtected, getUserData);
 publicRoute.post("/addPost", addPost);
 publicRoute.get("/logout", logout);
+publicRoute.delete('/deletePost/:id', deletePost);
+
+publicRoute.post('/updatePost/:id', updatePost);
 
 module.exports = publicRoute;

@@ -5,6 +5,8 @@ const signin = require("./handelSignin");
 const logout = require("./handlelogout");
 const getPosts = require("./getPosts");
 const addPost = require("./addPost");
+const deletePost = require('./deletePost');
+const updatePost = require('./updatePost');
 
 module.exports = {
   clientError,
@@ -15,4 +17,6 @@ module.exports = {
   logout,
   getPosts,
   addPost,
+  deletePost,
+   updatePost,
 };
