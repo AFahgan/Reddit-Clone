@@ -1,8 +1,10 @@
 const { clientError, serverError } = require("./handleError");
 const postSignUp = require("./handelSignup");
-const getUserData = require("./handlerGetUserData");
+const getUserData = require("./handleGetData");
 const signin = require("./handelSignin");
 const logout = require("./handlelogout");
+const getPosts = require("./getPosts");
+const addPost = require("./addPost");
 
 module.exports = {
   clientError,
@@ -11,4 +13,6 @@ module.exports = {
   postSignUp,
   signin,
   logout,
+  getPosts,
+  addPost,
 };
