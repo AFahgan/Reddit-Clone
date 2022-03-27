@@ -37,7 +37,16 @@ fetch('/getposts')
     postTitle.textContent = post.title;
     postDetails.appendChild(postTitle);
 
-   
+    const postcontent= document.createElement('p');
+    postcontent.classList.add('news-title');
+    postcontent.textContent = post.content;
+    postDetails.appendChild(postcontent);
+
+    const postby= document.createElement('p');
+    postby.classList.add('news-title');
+    postby.textContent = post.user_id;
+    postDetails.appendChild(postby);
+
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('news-category');
     deleteBtn.textContent = 'Delete Post';
@@ -46,7 +55,7 @@ fetch('/getposts')
       deletePost(post.id).then(window.location.assign('/home'));
     };
     postDetails.appendChild(deleteBtn);
-    
+
     const updateBtn = document.createElement('button');
     updateBtn.classList.add('news-category');
     updateBtn.textContent = 'Update Post';

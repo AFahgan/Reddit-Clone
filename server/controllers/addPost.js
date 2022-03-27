@@ -2,9 +2,9 @@ const addPostDB = require('../database/queries/addPostDB');
 
 const addPost = (req, res) => {
   const {
-    title,
+    title,content, user_id
   } = req.body;
-  addPostDB(title)
+  addPostDB(title,content, user_id)
     .then(() => {
       res.redirect('/home');
     });
