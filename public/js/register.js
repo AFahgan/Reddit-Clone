@@ -9,6 +9,7 @@ const userNmaeErr = document.getElementById("userNmaeErr");
 const emailErr = document.getElementById("emailErr");
 const passwordErr = document.getElementById("passwordErr");
 
+
 const displayErr=(errElem, errMsg)=> {
     errElem.innerText = errMsg;
   }
@@ -77,7 +78,9 @@ fetch('/api/v1/register',{
 }).then((response) => {
   if (response.redirected) {
       window.location.href = response.url;
-  }
+  } else {
+     alert("Email is used")
+      }
   return response;
 })
 });
