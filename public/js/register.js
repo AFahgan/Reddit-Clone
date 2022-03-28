@@ -79,7 +79,7 @@ fetch('/api/v1/register',{
   if (response.redirected) {
       window.location.href = response.url;
   } else {
-     alert("Email is used")
+     alert("Please Enter Another Email!")
       }
   return response;
 })
