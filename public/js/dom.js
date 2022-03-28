@@ -71,12 +71,12 @@ fetch("/getposts")
 
       const userPost = document.createElement("a");
       userPost.href = "/profile";
-      userPost.textContent = "Ayman";
+      userPost.textContent = "UserID:"+post.user_id;
       postBy.appendChild(userPost);
 
       const postdate = document.createElement("h5");
       postdate.classList.add("postdate");
-      postdate.textContent = "2 hours ago";
+      postdate.textContent = "Two hours ago";
       subData.appendChild(postdate);
 
 

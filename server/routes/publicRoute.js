@@ -32,7 +32,7 @@ publicRoute.get("/reddit", isAuthProtected, (req, res) => {
 
 publicRoute.get("/getPosts", getPosts);
 publicRoute.get("/user", isAuthProtected, getUserData);
-publicRoute.post("/addPost", addPost);
+publicRoute.post("/addPost", isAuthProtected, addPost);
 publicRoute.get("/logout", logout);
 publicRoute.delete('/deletePost/:id', deletePost);
 

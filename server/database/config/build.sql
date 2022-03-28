@@ -2,7 +2,7 @@ BEGIN;
 DROP TABLE IF EXISTS users,posts CASCADE;
 CREATE TABLE users (
   id  serial  PRIMARY KEY,
-  userName  varchar(100)  NOT NULL,
+  userName  varchar(100) UNIQUE NOT NULL,
   email varchar(100) UNIQUE NOT NULL,
   password  varchar(100)  NOT NULL
 );
