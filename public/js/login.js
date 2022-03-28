@@ -54,14 +54,15 @@ form.addEventListener("submit", (event) => {
       email: email.value,
       password: password.value,
     }),
-  }).then((response) => {
-    if (response.redirected) {
-      window.location.href = response.url;
-    }
-    return response;
   })
-  .then(response=> response.json())
-  .then(data=>{
-    swal('ERROR!',data,'error')
-  })
+    .then((response) => {
+      if (response.redirected) {
+        window.location.href = response.url;
+      }
+      return response;
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      swal("ERROR!", data, "error");
+    });
 });
