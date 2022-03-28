@@ -2,7 +2,6 @@ const signinSchema = require("../utils/validation/signinSchema");
 const bcrypt = require("bcryptjs");
 const {  getUserByEmail } = require("../database/queries");
 const jwt = require("jsonwebtoken");
-const comaprePassword = require("../utils/password/comparepassword");
 // const { asyncValidation, verifyToken } = require("../utils/index");
 const signin = (req, res) => {
   const { password } = req.body;
@@ -14,7 +13,7 @@ const signin = (req, res) => {
         res.status(403).json("USER NOT FOUND!");
         
       } else {
-        comaprePassword(password, data.rows[0].password).then((value) => {
+        bcrypt.compare(password, data.rows[0].password).then((value) => {
           if (value === false) {
             res.status(403).json("PASSWORD ERROR!");
           } else {
