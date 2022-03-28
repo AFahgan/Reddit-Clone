@@ -1,5 +1,5 @@
 
-
+// user
 fetch("/user").then(response => response.json())
 .then(([user ])=>{ 
     const btnlk = document.querySelector('.username');
