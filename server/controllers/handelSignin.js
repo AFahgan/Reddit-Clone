@@ -6,18 +6,21 @@ const { CustomError } = require("../utils");
 
 const signin = (req, res, next) => {
   const { password } = req.body;
+  let userId = "";
   signinSchema
     .validateAsync(req.body)
     .then((value) => getUserByEmail(value.email))
     .then((data) => {
-     
+      userId = data.rows[0].id;
+
       if (!data.rows.length) {
         res.status(403).json("USER NOT FOUND!");
         throw CustomError("email not found", 401);
       }
       return bcrypt.compare(password, data.rows[0].password);
-      userId = data.rows[0].id;
-    })
+     
+    }
+    )
     .then((value) => {
       if (value === false) {
         res.status(403).json("PASSWORD ERROR!");
