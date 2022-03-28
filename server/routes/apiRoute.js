@@ -1,5 +1,5 @@
 const apiRoute = require("express").Router();
-const { postSignUp, signin } = require("../controllers");
+const { postSignUp, signin, addPost } = require("../controllers");
 
 
 
