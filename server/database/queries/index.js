@@ -3,7 +3,7 @@ const getUsers = require("./getAllUsers");
 const getUserByEmail = require("./getUserbyEmail");
 const addPostDB  = require("./addPostDB");
 const updatepostDB  = require("./updatepostDB");
-const getpostsDB  = require("./getpostsDB");
+const getpostsDB  = require("./getPostsDB");
 const deletepostDB  = require("./deletepostDB");
 const getUserPostDB  = require("./getUserPostDB");
 
