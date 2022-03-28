@@ -1,5 +1,5 @@
 BEGIN;
-DROP TABLE IF EXISTS users,posts CASCADE;
+DROP TABLE IF EXISTS posts,users CASCADE;
 CREATE TABLE users (
   id  serial  PRIMARY KEY,
   userName  varchar(100) UNIQUE NOT NULL,
