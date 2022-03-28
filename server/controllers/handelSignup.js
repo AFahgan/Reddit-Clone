@@ -12,6 +12,8 @@ const postSignUp = (req, res, next) => {
     .then(() => getUserByEmail(email))
     .then((data) => {
       if (data.rowCount) {
+        res.status(409).json("Sorry! This email is already in use");
+
         throw CustomError("Sorry! This email is already in use", 409);
      
       }
