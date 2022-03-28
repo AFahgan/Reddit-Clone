@@ -1,10 +1,8 @@
-require("env2")("config.env");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
 const { postSign, getUserByEmail } = require("../database/queries");
 const signupSchema = require("../utils/validation/signupSchema");
 const hashPassword = require("../utils/password/hashpassword");
-const { CustomError } = require("../utilS");
+const { CustomError } = require("../utils");
 
 const postSignUp = (req, res, next) => {
   const { username, email, password } = req.body;
@@ -14,7 +12,10 @@ const postSignUp = (req, res, next) => {
     .then(() => getUserByEmail(email))
     .then((data) => {
       if (data.rowCount) {
+        res.status(409).json("Sorry! This email is already in use");
+
         throw CustomError("Sorry! This email is already in use", 409);
+     
       }
       return hashPassword(password);
     })
@@ -33,6 +34,8 @@ const postSignUp = (req, res, next) => {
       );
     }).catch((err) => {
       if (err.details) {
+        res.status(400).json("Please Enter A valid Email or valid Password");
+
         next(CustomError(err.details[0].message, 400));
             } else {
         next(err);

@@ -78,10 +78,14 @@ fetch('/api/v1/register',{
 }).then((response) => {
   if (response.redirected) {
       window.location.href = response.url;
-  } else {
-     alert("Email is used")
-      }
+    }
+      //  else {
+  //    alert("Please Enter Another Email!")
+  //     }
   return response;
+}) .then(response=> response.json())
+.then(data=>{
+  swal('ERROR!',data,'error')
 })
 });
 

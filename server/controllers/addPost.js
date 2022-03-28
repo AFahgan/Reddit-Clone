@@ -1,10 +1,12 @@
 const addPostDB = require('../database/queries/addPostDB');
 
 const addPost = (req, res) => {
+  const idUser = req.id;
+  const userIdFinal = idUser.id;
   const {
-    title,content, user_id
+    title,content,img_url,votes
   } = req.body;
-  addPostDB(title,content, user_id)
+  addPostDB(title,content,img_url,votes, userIdFinal)
     .then(() => {
       res.redirect('/home');
     });
