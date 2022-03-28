@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const { postSign, getUserByEmail } = require("../database/queries");
 const signupSchema = require("../utils/validation/signupSchema");
 const hashPassword = require("../utils/password/hashpassword");
-const { CustomError } = require("../utilS");
+const { CustomError } = require("../utils");
 
 const postSignUp = (req, res, next) => {
   const { username, email, password } = req.body;
