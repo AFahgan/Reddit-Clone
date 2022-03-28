@@ -7,6 +7,7 @@ const getPosts = require("./getPosts");
 const addPost = require("./addPost");
 const deletePost = require('./deletePost');
 const updatePost = require('./updatePost');
+const getUserPosts = require('./getUserPost');
 
 module.exports = {
   clientError,
@@ -19,4 +20,6 @@ module.exports = {
   addPost,
   deletePost,
    updatePost,
+   getUserPosts,
+  
 };

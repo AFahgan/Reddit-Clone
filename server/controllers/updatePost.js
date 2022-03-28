@@ -1,4 +1,4 @@
-const updatepostDB = require('../database/queries/updatepostDB');
+const updatepostDB = require('../database/queries');
 
 const updatePost = (req, res) => {
   const postId = req.params.id;

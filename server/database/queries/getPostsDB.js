@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 
-const getbookDB = () => {
+const getpostsDB = () => {
   const sql = {
     text: 'SELECT * FROM posts;',
   };
@@ -8,4 +8,4 @@ const getbookDB = () => {
   return connection.query(sql);
 };
 
-module.exports = getbookDB;
+module.exports = getpostsDB;
