@@ -217,7 +217,6 @@ nav {
 .posts-header {
   background-color: #fff;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   height: 60px;
@@ -226,7 +225,6 @@ nav {
   border-radius: 5px;
 }
 .posts-header button {
-  background-color: #f7f7f7;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -237,12 +235,23 @@ nav {
   width: 70px;
   height: 40px;
   padding: 7px 12px;
-  margin: 0 10px;
+  margin: 0 5px;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
+}
+.hotbtn{
+  background-color: #cfcfcf;
+  color: #0079d2;
+
+}
+.posts-header  :hover{
+  background-color: #cfcfcf;
+  color: #0079d2;
+
 }
 .hot {
   color: #0079d2;
+
 }
 .dots {
   display: flex;
