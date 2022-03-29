@@ -8,8 +8,26 @@ const deletePost = (id) =>
     redirect: "follow",
   });
 
+// user
+fetch("/user").then(response => response.json())
+.then(([user ])=>{
+    const btnlk = document.querySelector('.username');
+    const username = document.createElement('span');
+    username.textContent = user[0].username;
+    btnlk.appendChild(username)
+    const btnlk2 = document.querySelector('.username2');
+    const username2 = document.createElement('span');
+    username2.textContent = user[0].username;
+    btnlk2.appendChild(username2)
+    const btnlkemail = document.querySelector('.Email');
+    const email = document.createElement('span');
+    email.textContent = user[0].email;
+    btnlkemail.appendChild(email)
+
+})
 
 const logoutBtn = document.getElementById("logout");
+
 logoutBtn.addEventListener("click", (event) => {
   event.preventDefault();
   fetch("/logout").then((response) => {
@@ -24,19 +42,7 @@ const id = window.location.href.split("?")[1]?.split("=")[1];
 if (!id) {
   fetch("/userpost")
     .then((res) => res.json())
-    .then(([posts,user]) => {
-      const btnlk = document.querySelector('.username');
-      const username = document.createElement('span');
-      username.textContent = user[0].username;
-      btnlk.appendChild(username)
-      const btnlk2 = document.querySelector('.username2');
-      const username2 = document.createElement('span');
-      username2.textContent = user[0].username;
-      btnlk2.appendChild(username2)
-      const btnlkemail = document.querySelector('.Email');
-      const email = document.createElement('span');
-      email.textContent = user[0].email;
-      btnlkemail.appendChild(email)
+    .then((posts) => {
       if (!posts.length) {
         const noPosts = document.createElement("div");
         noPosts.className = "Nopost";

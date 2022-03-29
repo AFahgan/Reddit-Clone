@@ -29,7 +29,7 @@ publicRoute.get("/reddit", isAuthProtected, (req, res) => {
 
 publicRoute.get("/getPosts", getPosts);
 publicRoute.get("/user", isAuthProtected, getUserData);
-publicRoute.get("/userpost", isAuthProtected, getUserProfile);
+publicRoute.get("/userpost", isAuthProtected, getUserPosts);
 
 publicRoute.post("/addPost", isAuthProtected, addPost);
 publicRoute.get("/logout", logout);
