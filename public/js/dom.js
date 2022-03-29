@@ -108,6 +108,9 @@ fetch("/getposts")
       footerBtn.classList.add("footer-btn");
       footerBtn.textContent="0 comments";
       FooterBtns.appendChild(footerBtn);
+    //   footerBtn.addEventListener('click',(event)=>{
+    //     event.preventDefault();
+    // })
       const faReg = document.createElement("i");
       faReg.classList.add("fa-regular", "fa-message");
       footerBtn.appendChild(faReg);
@@ -119,3 +122,5 @@ fetch("/getposts")
     
     });
   });
+
+  

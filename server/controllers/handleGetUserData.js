@@ -1,14 +1,12 @@
 const { getUsers } = require("../database/queries");
 
-const getUserData = (req, res) => {
+const getUserData = (req, res,next) => {
   const idUser = req.id;
-  const userId = idUser.id;
-  const getusers = getUsers(userId);
-  Promise.all([getusers])
+  getUsers(idUser.id)
     .then((values) => {
-      res.json([values[0].rows]);
+      res.json([values.rows]);
     })
-    .catch((e) => console.error(e));
+    .catch((err) => next(err));
 };
 
 module.exports = getUserData;

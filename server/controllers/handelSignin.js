@@ -11,7 +11,7 @@ const signin = (req, res, next) => {
     .validateAsync(req.body)
     .then((value) => getUserByEmail(value.email))
     .then((data) => {
-      userId = data.rows[0].id;
+      userId=data;
 
       if (!data.rows.length) {
         res.status(403).json("USER NOT FOUND!");
@@ -25,7 +25,7 @@ const signin = (req, res, next) => {
       if (value === false) {
         res.status(403).json("PASSWORD ERROR!");
       } else {
-        jwt.sign({ id: userId }, process.env.PRIVATE_KEY, (err, token) => {
+        jwt.sign({ id: userId.rows[0].id }, process.env.PRIVATE_KEY, (err, token) => {
           if (err) {
             console.log(err);
           } else {
