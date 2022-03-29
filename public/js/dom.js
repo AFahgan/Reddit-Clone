@@ -12,6 +12,7 @@ const updatePost = (id) =>
 fetch("/getposts")
   .then((res) => res.json())
   .then((posts) => {
+    console.log(posts);
     const postCard = document.querySelector(".redditposts");
     posts.forEach((post) => {
       const postdiv = document.createElement("div");
@@ -63,7 +64,7 @@ fetch("/getposts")
 
       const userPost = document.createElement("a");
       userPost.href = "/profile";
-      userPost.textContent = "UserID:"+post.user_id;
+      userPost.textContent = post.username;
       postBy.appendChild(userPost);
 
       const postdate = document.createElement("h5");

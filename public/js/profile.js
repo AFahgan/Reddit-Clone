@@ -104,7 +104,7 @@ fetch("/userpost")
 
       const userPost = document.createElement("a");
       userPost.href = "/profile";
-      userPost.textContent = "UserID:"+post.username;
+      userPost.textContent = post.username;
       postBy.appendChild(userPost);
 
       const postdate = document.createElement("h5");
