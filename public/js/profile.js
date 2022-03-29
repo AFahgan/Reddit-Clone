@@ -37,11 +37,13 @@ fetch('/logout').then((response) => {
 fetch("/userpost")
   .then((res) => res.json())
   .then((posts) => {
+    
     const postCard = document.querySelector(".redditposts");
     posts.forEach((post) => {
       const postdiv = document.createElement("div");
       postdiv.classList.add("redditpost");
       postCard.appendChild(postdiv);
+      console.log(post[i]);
 
       const voteSection = document.createElement("div");
       voteSection.classList.add("vote-section");

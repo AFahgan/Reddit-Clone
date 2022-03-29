@@ -1,6 +1,6 @@
 const { clientError, serverError } = require("./handleError");
 const postSignUp = require("./handelSignup");
-const getUserData = require("./handleGetData");
+const getUserData = require("./handleGetUserData");
 const signin = require("./handelSignin");
 const logout = require("./handlelogout");
 const getPosts = require("./getPosts");
