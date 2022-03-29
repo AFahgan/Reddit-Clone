@@ -8,6 +8,7 @@ const updatePost = (id) =>
     },
     redirect: "follow",
   });
+  const id = window.location.href.split("?")[1]?.split("=")[1];
 
 fetch("/getposts")
   .then((res) => res.json())
@@ -63,10 +64,10 @@ fetch("/getposts")
       subData.appendChild(postBy);
 
       const userPost = document.createElement("a");
-      userPost.href = "/profile";
+      userPost.href = `/profile?id=${post.user_id}`;
       userPost.textContent = post.username;
       postBy.appendChild(userPost);
-
+      
       const postdate = document.createElement("h5");
       postdate.classList.add("postdate");
       postdate.textContent = "Two hours ago";

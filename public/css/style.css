@@ -281,12 +281,16 @@ button img {
 
 
 .btnlk2{
-  text-align: center;
-  margin-top: 50px;
-  color: #161616;
-  font-weight: 900;
+  color: #0079d2;
+  font-weight: 600;
 }
-
+.Nopost{
+  color: #ff4500;
+  font-weight: 600;
+}
+.Nopostimg{
+  width: 100%;
+}
 /* Posts Start */
 
 .main-cont {

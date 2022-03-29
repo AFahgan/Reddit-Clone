@@ -36,7 +36,7 @@ publicRoute.get("/logout", logout);
 publicRoute.delete('/deletePost/:id', deletePost);
 
 publicRoute.post('/updatePost/:id', updatePost);
-publicRoute.post('/profile/:id', getUserProfile);
+publicRoute.get('/profile/:id', getUserProfile);
 publicRoute.get("/profile", isAuthProtected, (req, res) => {
   res.sendFile(
     path.join(__dirname, "..", "..", "public", "html", "profile.html")
