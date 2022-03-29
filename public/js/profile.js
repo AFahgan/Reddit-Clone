@@ -26,7 +26,9 @@ fetch("/user").then(response => response.json())
     const email = document.createElement('span');
     email.textContent = user[0].email;
     btnlkemail.appendChild(email)
-   
+    const imgg = document.createElement('img');
+    imgg.textContent = user[0].img_url;
+    btnlkemail.appendChild(imgg)
 })
 
 
@@ -43,6 +45,7 @@ fetch('/logout').then((response) => {
 });
 })
 
+
 fetch("/userpost")
   .then((res) => res.json())
   .then((posts) => {
@@ -54,7 +57,6 @@ fetch("/userpost")
     }else {
     const postCard = document.querySelector(".redditposts");
     posts.forEach((post) => {
-      console.log(post);
       const postdiv = document.createElement("div");
       postdiv.classList.add("redditpost");
       postCard.appendChild(postdiv);
@@ -163,6 +165,9 @@ fetch("/userpost")
         deletePost(post.id).then(window.location.assign('/profile'));
       };
       FooterBtns.appendChild(deleteBtn);
-    });}
+    });
+  
+  
+  }
   });
 
