@@ -1,11 +1,3 @@
-const deletePost = (id) =>
-  fetch(`/deletePost/${id}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    redirect: "follow",
-  });
 
 /* eslint-disable no-console */
 const updatePost = (id) =>
@@ -20,6 +12,7 @@ const updatePost = (id) =>
 fetch("/getposts")
   .then((res) => res.json())
   .then((posts) => {
+    console.log(posts);
     const postCard = document.querySelector(".redditposts");
     posts.forEach((post) => {
       const postdiv = document.createElement("div");
@@ -71,7 +64,7 @@ fetch("/getposts")
 
       const userPost = document.createElement("a");
       userPost.href = "/profile";
-      userPost.textContent = "UserID:"+post.user_id;
+      userPost.textContent = post.username;
       postBy.appendChild(userPost);
 
       const postdate = document.createElement("h5");
@@ -123,13 +116,6 @@ fetch("/getposts")
       footerBtndots.textContent="• • •";
 
       FooterBtns.appendChild(footerBtndots);
-      const deleteBtn = document.createElement('button');
-      deleteBtn.classList.add('footer-btn');
-      deleteBtn.textContent = 'Delete Post';
-      deleteBtn.onclick = () => {
-        console.log(post.id);
-        deletePost(post.id).then(window.location.assign('/reddit'));
-      };
-      FooterBtns.appendChild(deleteBtn);
+    
     });
   });

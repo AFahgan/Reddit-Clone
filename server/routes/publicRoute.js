@@ -1,7 +1,7 @@
 const publicRoute = require("express").Router();
 const path = require("path");
 const { isAuthProtected, isUserLogined } = require("../middleware");
-const { logout, getUserData, addPost, getPosts, deletePost, updatePost } = require("../controllers");
+const { logout, getUserData, addPost, getPosts, deletePost, updatePost, getUserPosts} = require("../controllers");
 
 publicRoute.get("/home", isAuthProtected, (req, res) => {
   res.sendFile(
@@ -32,6 +32,8 @@ publicRoute.get("/reddit", isAuthProtected, (req, res) => {
 
 publicRoute.get("/getPosts", getPosts);
 publicRoute.get("/user", isAuthProtected, getUserData);
+publicRoute.get("/userpost", isAuthProtected, getUserPosts);
+
 publicRoute.post("/addPost", isAuthProtected, addPost);
 publicRoute.get("/logout", logout);
 publicRoute.delete('/deletePost/:id', deletePost);
