@@ -1,14 +1,12 @@
 const { getUserPostDB } = require("../database/queries");
 
-const getUserPosts = (req, res) => {
+const getUserPosts = (req, res,next) => {
   const idUser = req.id;
+  console.log(req.id);
   const userId = idUser.id;
-  const getUserPost = getUserPostDB(userId);
-  Promise.all([getUserPost])
-    .then((values) => {
-      res.json([values[0].rows]);
-    })
-    .catch((e) => console.error(e));
+  getUserPostDB(userId)  .then((data) => res.json(data.rows))
+  .catch((err) => next(err));
 };
+ 
 
 module.exports = getUserPosts;

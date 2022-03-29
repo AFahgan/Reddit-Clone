@@ -1,3 +1,12 @@
+const postsdiv = document.querySelector(".redditposts");
+const deletePost = (id) =>
+  fetch(`/deletePost/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+  });
 
 // user
 fetch("/user").then(response => response.json())
@@ -37,12 +46,18 @@ fetch('/logout').then((response) => {
 fetch("/userpost")
   .then((res) => res.json())
   .then((posts) => {
+    if (!posts.length) {
+      const noPosts = document.createElement("div");
+      noPosts.className = "btnlk2";
+      noPosts.textContent = "There Are No posts Yet";
+      postsdiv.appendChild(noPosts);
+    }else {
     const postCard = document.querySelector(".redditposts");
     posts.forEach((post) => {
+      console.log(post);
       const postdiv = document.createElement("div");
       postdiv.classList.add("redditpost");
       postCard.appendChild(postdiv);
-      console.log(post);
 
       const voteSection = document.createElement("div");
       voteSection.classList.add("vote-section");
@@ -89,7 +104,7 @@ fetch("/userpost")
 
       const userPost = document.createElement("a");
       userPost.href = "/profile";
-      userPost.textContent = "UserID:"+post.user_id;
+      userPost.textContent = "UserID:"+post.username;
       postBy.appendChild(userPost);
 
       const postdate = document.createElement("h5");
@@ -145,10 +160,9 @@ fetch("/userpost")
       deleteBtn.classList.add('footer-btn');
       deleteBtn.textContent = 'Delete Post';
       deleteBtn.onclick = () => {
-        console.log(post.id);
-        deletePost(post.id).then(window.location.assign('/reddit'));
+        deletePost(post.id).then(window.location.assign('/profile'));
       };
       FooterBtns.appendChild(deleteBtn);
-    });
+    });}
   });
 

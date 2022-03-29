@@ -1,11 +1,3 @@
-const deletePost = (id) =>
-  fetch(`/deletePost/${id}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    redirect: "follow",
-  });
 
 /* eslint-disable no-console */
 const updatePost = (id) =>
@@ -123,13 +115,6 @@ fetch("/getposts")
       footerBtndots.textContent="• • •";
 
       FooterBtns.appendChild(footerBtndots);
-      const deleteBtn = document.createElement('button');
-      deleteBtn.classList.add('footer-btn');
-      deleteBtn.textContent = 'Delete Post';
-      deleteBtn.onclick = () => {
-        console.log(post.id);
-        deletePost(post.id).then(window.location.assign('/reddit'));
-      };
-      FooterBtns.appendChild(deleteBtn);
+    
     });
   });
