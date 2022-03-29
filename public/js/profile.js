@@ -169,18 +169,13 @@ if (!id) {
   fetch(`/profile/${id}`)
     .then((res) => res.json())
     .then(([posts, user]) => {
-      const btnlk = document.querySelector(".username");
-      const username = document.createElement("span");
-      username.textContent = user[0].username;
-      btnlk.appendChild(username);
-      const btnlk2 = document.querySelector(".username2");
-      const username2 = document.createElement("span");
+    
+    
+      const username2 = document.querySelector(".username2");
       username2.textContent = user[0].username;
-      btnlk2.appendChild(username2);
-      const btnlkemail = document.querySelector(".Email");
-      const email = document.createElement("span");
-      email.textContent = user[0].email;
-      btnlkemail.appendChild(email);
+     
+      const EmailDiv = document.querySelector(".Email");
+      EmailDiv.textContent = user[0].email;
       const postCard = document.querySelector(".redditposts");
 
       posts.forEach((post) => {
