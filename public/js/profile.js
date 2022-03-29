@@ -273,13 +273,7 @@ if (!id) {
         footerBtndots.textContent = "• • •";
 
         FooterBtns.appendChild(footerBtndots);
-        const deleteBtn = document.createElement("button");
-        deleteBtn.classList.add("footer-btn");
-        deleteBtn.textContent = "Delete Post";
-        deleteBtn.onclick = () => {
-          deletePost(post.id).then(window.location.assign("/profile"));
-        };
-        FooterBtns.appendChild(deleteBtn);
+      
       });
     });
 }
