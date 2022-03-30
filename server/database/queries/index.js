@@ -6,7 +6,7 @@ const updatepostDB  = require("./updatepostDB");
 const getpostsDB  = require("./getPostsDB");
 const deletepostDB  = require("./deletepostDB");
 const getUserPostDB  = require("./getUserPostDB");
-
+const getUserByUsername = require("./getUserbyUsername");
 module.exports = {
   postSign,
   getUsers,
@@ -16,5 +16,6 @@ module.exports = {
   getpostsDB,
   deletepostDB,
   getUserPostDB,
+  getUserByUsername,
 
 };

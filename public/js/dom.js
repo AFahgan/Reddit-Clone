@@ -8,11 +8,26 @@ const updatePost = (id) =>
     },
     redirect: "follow",
   });
+  const id = window.location.href.split("?")[1]?.split("=")[1];
 
 fetch("/getposts")
   .then((res) => res.json())
   .then((posts) => {
-    console.log(posts);
+if(!posts.length){
+  console.log(posts);
+  const noPosts = document.createElement("div");
+        noPosts.className = "Nopost";
+        noPosts.textContent = "There Are No posts Yet";
+        const postsdiv = document.querySelector(".redditposts");
+
+        postsdiv.appendChild(noPosts);
+        const noPostsimg = document.createElement("img");
+        noPostsimg.className = "Nopostimg";
+        noPostsimg.src = "./assets/not_found.png";
+        postsdiv.appendChild(noPostsimg);
+}else{
+
+
     const postCard = document.querySelector(".redditposts");
     posts.forEach((post) => {
       const postdiv = document.createElement("div");
@@ -63,10 +78,10 @@ fetch("/getposts")
       subData.appendChild(postBy);
 
       const userPost = document.createElement("a");
-      userPost.href = "/profile";
+      userPost.href = `/profile?id=${post.user_id}`;
       userPost.textContent = post.username;
       postBy.appendChild(userPost);
-
+      
       const postdate = document.createElement("h5");
       postdate.classList.add("postdate");
       postdate.textContent = "Two hours ago";
@@ -108,6 +123,9 @@ fetch("/getposts")
       footerBtn.classList.add("footer-btn");
       footerBtn.textContent="0 comments";
       FooterBtns.appendChild(footerBtn);
+    //   footerBtn.addEventListener('click',(event)=>{
+    //     event.preventDefault();
+    // })
       const faReg = document.createElement("i");
       faReg.classList.add("fa-regular", "fa-message");
       footerBtn.appendChild(faReg);
@@ -118,4 +136,7 @@ fetch("/getposts")
       FooterBtns.appendChild(footerBtndots);
     
     });
+  }
   });
+
+  
