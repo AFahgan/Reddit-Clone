@@ -45,9 +45,7 @@ const postSignUp = (req, res, next) => {
         res.status(400).json("Please Enter A valid Email or valid Password");
 
         next(CustomError(err.details[0].message, 400));
-            } else {
-        next(err);
-      }
+            } 
     });
 };
 

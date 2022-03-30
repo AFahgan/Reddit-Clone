@@ -7,7 +7,7 @@ const isUserLogined = (req, res, next) => {
       if (err) {
         next();
       } else {
-        res.redirect("/");
+        res.redirect("/reddit");
       }
     });
   } else {
