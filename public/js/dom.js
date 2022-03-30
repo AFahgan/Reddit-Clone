@@ -13,7 +13,21 @@ const updatePost = (id) =>
 fetch("/getposts")
   .then((res) => res.json())
   .then((posts) => {
-    console.log(posts);
+if(!posts.length){
+  console.log(posts);
+  const noPosts = document.createElement("div");
+        noPosts.className = "Nopost";
+        noPosts.textContent = "There Are No posts Yet";
+        const postsdiv = document.querySelector(".redditposts");
+
+        postsdiv.appendChild(noPosts);
+        const noPostsimg = document.createElement("img");
+        noPostsimg.className = "Nopostimg";
+        noPostsimg.src = "./assets/not_found.png";
+        postsdiv.appendChild(noPostsimg);
+}else{
+
+
     const postCard = document.querySelector(".redditposts");
     posts.forEach((post) => {
       const postdiv = document.createElement("div");
@@ -122,6 +136,7 @@ fetch("/getposts")
       FooterBtns.appendChild(footerBtndots);
     
     });
+  }
   });
 
   

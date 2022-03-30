@@ -13,15 +13,16 @@ fetch("/user").then(response => response.json())
 .then(([user ])=>{
     const btnlk = document.querySelector('.username');
     const username = document.createElement('span');
+    username.href ="/profile";;
     username.textContent = user[0].username;
     btnlk.appendChild(username)
     const btnlk2 = document.querySelector('.username2');
     const username2 = document.createElement('span');
-    username2.textContent = user[0].username;
+    username2.textContent = "Username is :"+user[0].username;
     btnlk2.appendChild(username2)
     const btnlkemail = document.querySelector('.Email');
     const email = document.createElement('span');
-    email.textContent = user[0].email;
+    email.textContent = "Email is :"+user[0].email;
     btnlkemail.appendChild(email)
 
 })
